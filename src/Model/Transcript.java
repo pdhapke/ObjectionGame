@@ -3,7 +3,9 @@ package Model;
 import java.util.List; 
 
 public class Transcript {
-private List<String> previousQuestion; 
+private List<String> previousQuestion;
+private String sideAskingQuestion;
+
 private String courtQuestion; 
 private String witnessAnswer; 
 private int questionID; 
@@ -12,10 +14,11 @@ private int previousQuestionID;
 
 public Transcript(){};
 
-public Transcript(List<String> previous, String current, String answer, int preID, int qID, int fk){
+public Transcript(List<String> previous, String side, String current, String answer,  int qID, int preID, int fk){
 	this.previousQuestion = previous; 
 	this.courtQuestion = current; 
 	this.witnessAnswer = answer; 
+	this.sideAskingQuestion = side;
 	this.questionID = qID; 	
 	this.fk_witnessID = fk; 
 	this.previousQuestionID = preID;
@@ -23,7 +26,12 @@ public Transcript(List<String> previous, String current, String answer, int preI
 public int getPreviousQuestionID() {
 	return previousQuestionID;
 }
-
+public String getSideAskingQuestion() {
+	return sideAskingQuestion;
+}
+public void setSideAskingQuestion(String sideAskingQuestion) {
+	this.sideAskingQuestion = sideAskingQuestion;
+}
 public void setPreviousQuestionID(int previousQuestionID) {
 	this.previousQuestionID = previousQuestionID;
 }
