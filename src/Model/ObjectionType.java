@@ -3,13 +3,22 @@ package Model;
 public class ObjectionType {
 	private String objectionType; 
 	private String objectionInformation;  //this is just a default objection rules explanation for reference with federal rule #
-
+	private int objectionTypeID;
+	
+	
 	public ObjectionType(){}; 
-	public ObjectionType(String type, String info){
-	this.objectionInformation = info; 
-	this.objectionType = type; 
+	public ObjectionType(String type, String info, int typeID){
+		this.objectionInformation = info; 
+		this.objectionType = type; 
+		this.objectionTypeID = typeID; 
 	}
 	
+	public int getObjectionTypeID() {
+		return objectionTypeID;
+	}
+	public void setObjectionTypeID(int objectionTypeID) {
+		this.objectionTypeID = objectionTypeID;
+	}
 	public String getObjectionType() {
 		return objectionType;
 	}

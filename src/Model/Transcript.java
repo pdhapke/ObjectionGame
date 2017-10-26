@@ -8,15 +8,24 @@ private String courtQuestion;
 private String witnessAnswer; 
 private int questionID; 
 private int fk_witnessID; 
+private int previousQuestionID;
 
 public Transcript(){};
 
-public Transcript(List<String> previous, String current, String answer, int qID, int fk){
+public Transcript(List<String> previous, String current, String answer, int preID, int qID, int fk){
 	this.previousQuestion = previous; 
 	this.courtQuestion = current; 
 	this.witnessAnswer = answer; 
 	this.questionID = qID; 	
 	this.fk_witnessID = fk; 
+	this.previousQuestionID = preID;
+}
+public int getPreviousQuestionID() {
+	return previousQuestionID;
+}
+
+public void setPreviousQuestionID(int previousQuestionID) {
+	this.previousQuestionID = previousQuestionID;
 }
 public int getFk_witnessID() {
 	return fk_witnessID;

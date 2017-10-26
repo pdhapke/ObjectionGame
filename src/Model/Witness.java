@@ -13,7 +13,7 @@ private int witnessID;
 
 public Witness(){};
 
-public Witness(String fname, String lname, String aff, String side, int caseID, int witID){
+public Witness(String fname, String lname, String aff, String side,  int witID, int caseID){
 	this.firstname = fname; 
 	this.lastname = lname; 
 	this.affidavit = aff; 
