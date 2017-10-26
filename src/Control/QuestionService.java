@@ -18,4 +18,5 @@ public interface QuestionService {
 	public boolean userObjectsTo(String objectionType, String objectionTime);
 	public Objection getCorrectObjection(); 
 	public Objection getCorrectObjection(String type); 
+	public String toString();
 	}

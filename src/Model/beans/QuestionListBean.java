@@ -1,9 +1,6 @@
 package Model.beans;
 
 import Model.Question;
-import Model.Objection;
-import Model.Transcript;
-import Model.Witness;
 import java.util.Collections;
 import java.util.List; 
 

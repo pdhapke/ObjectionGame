@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import Control.QuestionService;
 import Model.Question;
 import Model.Objection;
-import Model.Transcript;
-import Model.Witness;
 import Model.beans.QuestionList;
 
 public class QuestionServiceBean implements QuestionService{
@@ -15,6 +13,7 @@ public class QuestionServiceBean implements QuestionService{
 	private List<Integer> completedQuestions; 
 	private int nextQuestion; 
 	private String objectionPracticeType; 
+	private int numberOfQuestionsRequested;
 	
 	
 	public QuestionServiceBean(){
@@ -27,14 +26,16 @@ public class QuestionServiceBean implements QuestionService{
 		this.score = 0; 
 		this.nextQuestion = 0; 
 		this.objectionPracticeType = type; 
+		this.numberOfQuestionsRequested = numberOfQuestions;
 		//create a list with type and number of questions requested
 	}
 	//testing constructor
-	public QuestionServiceBean(QuestionList testList){
+	public QuestionServiceBean(QuestionList testList, int numberOfQuestions){
 		this.completedQuestions = new ArrayList<Integer>(); 
 		this.list = testList; 
 		this.score = 0; 	
 		this.nextQuestion = 0; 
+		this.numberOfQuestionsRequested = numberOfQuestions; 
 	}
 	public String getObjectionPracticeType() {
 		return objectionPracticeType;
@@ -54,7 +55,12 @@ public class QuestionServiceBean implements QuestionService{
 	public int score() {
 		return this.score;
 	}
-
+	public int getNumberOfQuestionsRequested() {
+		return numberOfQuestionsRequested;
+	}
+	public void setNumberOfQuestionsRequested(int numberOfQuestionsRequested) {
+		this.numberOfQuestionsRequested = numberOfQuestionsRequested;
+	}
 	public List<Integer> completedQuestions() {
 		return this.completedQuestions;
 	}
@@ -110,6 +116,23 @@ public class QuestionServiceBean implements QuestionService{
 			i++;
 		}
 		return this.getCurrent().getCorrectObjections().get(i);
+	}
+	public String toString(){
+		String output = ""; 
+		int i = 1; 
+		output = output.concat("********").concat("\n"); 
+		output = output.concat("The current score is: " + this.score + " Points").concat("\n"); 
+		output = output.concat("In this round there are " + this.completedQuestions.size() + "/" + this.numberOfQuestionsRequested + " Questions completed").concat("\n"); 
+		output = output.concat("The current score is: " + this.score + " Points").concat("\n"); 
+		output = output.concat("The remaining questions are....").concat("\n"); 
+		
+		for(Question q : list.getQuestionList()){
+			output = output.concat("--------" + i + "--------").concat("\n"); 
+			output = output.concat(q.toString()).concat("\n");
+		}
+
+		
+		return output;		
 	}
 
 }
