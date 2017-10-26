@@ -92,22 +92,24 @@ public class QuestionServiceBean implements QuestionService{
 			if(obj.getObjectionType() == objectionType){
 				correct = true; 
 			}
-		completedQuestions.add(this.getCurrent().getQuestionID()); 			
-		//add scoring and next question stuff
-		
 		}
-		
+		completedQuestions.add(this.getCurrent().getQuestionID()); 			
+		this.nextQuestion++; 
+		updateScore(correct); 
 		return correct;
 	}
 	@Override
 	public Objection getCorrectObjection() {
-		// TODO Auto-generated method stub
-		return null;
+		int FIRST_POSSIBLE = 0;
+		return this.getCurrent().getCorrectObjections().get(FIRST_POSSIBLE);
 	}
 	@Override
 	public Objection getCorrectObjection(String type) {
-		// TODO Auto-generated method stub
-		return null;
+		int i = 0;
+		while(this.getCurrent().getCorrectObjections().get(i).getObjectionType() != type){
+			i++;
+		}
+		return this.getCurrent().getCorrectObjections().get(i);
 	}
 
 }

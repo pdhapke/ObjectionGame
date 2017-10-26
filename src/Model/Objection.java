@@ -1,33 +1,66 @@
 package Model;
 
 public class Objection {
-private String objectionType; 
-private String objectionInformation;  //this is just a default objection rules explanation for reference with federal rule #
+private ObjectionType description;
 private String explanation; //more detailed reason for why it is correct
 private String timing; //when the objection should be made (is)(calls for)(witness has begun)
+private int objectionID; 
+private int fk_questionID; 
+private int fk_objectionTypeID; 
+
 
 
 
 public Objection(){}; 
 
-public Objection(String type, String oInfo, String exp, String time){
-	this.objectionType = type; 
-	this.objectionInformation= oInfo; 
+public Objection(ObjectionType objType, String exp, String time, int objID, int fkQ, int fkOT){
+	this.description = objType;
 	this.explanation = exp; 
 	this.timing = time; 
+	this.objectionID = objID; 
+	this.fk_questionID = fkQ; 
+	this.fk_objectionTypeID = fkOT;
+}
+public int getObjectionID() {
+	return objectionID;
+}
+public ObjectionType getDescription() {
+	return description;
 }
 
+public void setDescription(ObjectionType description) {
+	this.description = description;
+}
+
+public int getFk_objectionTypeID() {
+	return fk_objectionTypeID;
+}
+
+public void setFk_objectionTypeID(int fk_objectionTypeID) {
+	this.fk_objectionTypeID = fk_objectionTypeID;
+}
+public void setObjectionID(int objectionID) {
+	this.objectionID = objectionID;
+}
+
+public int getFk_questionID() {
+	return fk_questionID;
+}
+
+public void setFk_questionID(int fk_questionID) {
+	this.fk_questionID = fk_questionID;
+}
 public String getObjectionType() {
-	return objectionType;
+	return this.description.getObjectionType();
 }
 public void setObjectionType(String objectionType) {
-	this.objectionType = objectionType;
+	this.description.setObjectionType(objectionType);
 }
 public String getObjectionInformation() {
-	return objectionInformation;
+	return this.description.getObjectionInformation();
 }
 public void setObjectionInformation(String objectionInformation) {
-	this.objectionInformation = objectionInformation;
+	this.description.setObjectionInformation(objectionInformation);
 }
 public String getExplanation() {
 	return explanation;
