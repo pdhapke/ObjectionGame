@@ -34,12 +34,16 @@ public class QuestionListBean implements QuestionList{
 	}
 
 	public void randomize() {
-		// TODO Auto-generated method stub
 		Collections.shuffle(list);
 	}
 	
 	public List<Question> getQuestionList() {
 		return list;
+	}
+	@Override
+	public Question get(int i) {
+		// TODO Auto-generated method stub
+		return list.get(i);
 	}
 
 	

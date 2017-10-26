@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import java.util.List; 
 import Model.databaseInformation;
 
-public interface DataBaseServicesTemplate {
+public interface DataBaseServices {
 	//Create
 	public boolean addQuestions(List<Question> list);
 	public boolean addQuestion(Question q);

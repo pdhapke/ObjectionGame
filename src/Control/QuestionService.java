@@ -9,11 +9,13 @@ import Model.Witness;
 
 public interface QuestionService {
 	public void updateScore(boolean correct);
-	public void getList(String type, int size);
+	public void getNewList(String type, int size);
 	public int score();
 	public List<Integer> completedQuestions(); 
 	public Question getNext(); 
-	public Question getLast(); 
+	public Question getCurrent(); 
 	public boolean hasNext(); 
-	public Question userObjectsTo(String objectionType, String objectionTime);
-}
+	public boolean userObjectsTo(String objectionType, String objectionTime);
+	public Objection getCorrectObjection(); 
+	public Objection getCorrectObjection(String type); 
+	}

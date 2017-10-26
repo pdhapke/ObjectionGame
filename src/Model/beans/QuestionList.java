@@ -13,5 +13,6 @@ public interface QuestionList {
 	public void add(Question question); 
 	public void randomize(); 	
 	public List<Question> getQuestionList(); 
+	public Question get(int i); 
 }
 	

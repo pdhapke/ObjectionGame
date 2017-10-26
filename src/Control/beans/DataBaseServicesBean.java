@@ -2,10 +2,10 @@ package Control.beans;
 import java.util.List;
 
 import com.google.gson.Gson;
-import Control.DataBaseServicesTemplate;
 import Model.Question;
+import Control.DataBaseServices;
 
-public class DataBaseServicesBean implements DataBaseServicesTemplate{
+public class DataBaseServicesBean implements DataBaseServices{
 
 	public boolean addQuestions(List<Question> list){
 		// TODO Auto-generated method stub
