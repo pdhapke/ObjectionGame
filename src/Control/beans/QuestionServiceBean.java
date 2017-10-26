@@ -20,6 +20,7 @@ public class QuestionServiceBean implements QuestionService{
 		this.score = 0; 
 		this.completedQuestions = new ArrayList<Integer>(); 
 		this.nextQuestion = 0; 
+		this.objectionPracticeType = null; 
 		};
 	public QuestionServiceBean(String type, int numberOfQuestions){
 		this.completedQuestions = new ArrayList<Integer>(); 
@@ -36,6 +37,7 @@ public class QuestionServiceBean implements QuestionService{
 		this.score = 0; 	
 		this.nextQuestion = 0; 
 		this.numberOfQuestionsRequested = numberOfQuestions; 
+		this.objectionPracticeType = null; 
 	}
 	public String getObjectionPracticeType() {
 		return objectionPracticeType;
@@ -129,8 +131,14 @@ public class QuestionServiceBean implements QuestionService{
 		for(Question q : list.getQuestionList()){
 			output = output.concat("--------" + i + "--------").concat("\n"); 
 			output = output.concat(q.toString()).concat("\n");
+			i++; 
 		}
+		if(this.objectionPracticeType != null){
+			output = output.concat("\tCurrently practicing: " + this.objectionPracticeType); 
+		} else {
+			output = output.concat("\tCurrently practicing all objection types"); 
 
+		}
 		
 		return output;		
 	}

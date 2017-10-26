@@ -21,6 +21,18 @@ public Witness(String fname, String lname, String aff, String side,  int witID, 
 	this.fk_caseID = caseID; 
 	this.witnessID = witID; 
 }
+public String toString(){
+	String s = ""; 
+	s = s.concat("Witness - " + this.firstname + " " + this.lastname + ", Side:  " + this.side).concat("\n");
+	s = s.concat("--Statement--").concat("\n");
+	s = s.concat(this.affidavit).concat("\n");
+	s = s.concat("Witness ID: " + this.witnessID);
+	
+	return s;
+	
+}
+	
+
 public int getFk_caseID() {
 	return fk_caseID;
 }

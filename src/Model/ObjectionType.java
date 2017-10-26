@@ -5,6 +5,12 @@ public class ObjectionType {
 	private String objectionInformation;  //this is just a default objection rules explanation for reference with federal rule #
 	private int objectionTypeID;
 	
+	public String toString(){
+		String s = ""; 
+		s = s.concat(this.objectionType).concat("\n");;
+		s = s.concat(this.objectionTypeID + " - " + this.objectionInformation);
+		return s;
+		}
 	
 	public ObjectionType(){}; 
 	public ObjectionType(String type, String info, int typeID){

@@ -9,6 +9,12 @@ public class Context {
 		this.caseID = ID;
 		this.context = con;
 	}
+	public String toString(){
+		String s = ""; 
+		s = s.concat("Case #" + caseID + ": " + this.context).concat("\n");
+		return s;
+	}
+	
 	public int getCaseID() {
 		return caseID;
 	}

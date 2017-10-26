@@ -17,7 +17,22 @@ public class Question {
 		this.correctObjections = correct;
 			
 	};
-	
+	public String toString(){
+		int j = 1; 
+		String output = ""; 
+		output = output.concat("Question:").concat("\n");
+		output = output.concat(this.context.toString()).concat("\n");
+		output = output.concat(this.witness.toString()).concat("\n");
+		output = output.concat(this.transcript.toString()).concat("\n");
+		for(Objection o : this.correctObjections){
+			output = output.concat("Objection #" + j).concat("\n");
+			j++;
+			output = output.concat(o.toString()).concat("\n");
+		}
+		output = output.concat("\t --End of Record--");
+
+		return output;
+	}
 	
 	public int getCaseID() {
 		return context.getCaseID();

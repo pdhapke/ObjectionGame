@@ -4,10 +4,17 @@ public class Objection {
 private ObjectionType description;
 private String explanation; //more detailed reason for why it is correct
 private String timing; //when the objection should be made (is)(calls for)(witness has begun)
+
 private int objectionID; 
 private int fk_questionID; 
 private int fk_objectionTypeID; 
 
+public String toString(){
+	String s = ""; 
+	s = s.concat("This objection is: ").concat(this.description.toString()).concat("\n");;
+	s = s.concat("Because: " + this.explanation + " It is objectionable due to the " + this.timing + ". ");
+	return s;
+}
 
 
 
