@@ -9,12 +9,8 @@ public class TestProgram {
 
 	public static void main(String args[]){
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfiguration.class); 
-			
 		QuestionService serve = applicationContext.getBean("service", QuestionServiceBean.class);
-		
 		System.out.println(serve.toString());
-	
-		
 		applicationContext.close();
 	}
 	
